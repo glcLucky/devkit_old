@@ -41,6 +41,7 @@ def timedelta(delta):
     将数值转换为对应周期
     @delta<dict>: {周期： 数值}
     """
+    assert list(delta.keys())[0] in ['days', 'months', 'years']
     return relativedelta(**delta)
 
 

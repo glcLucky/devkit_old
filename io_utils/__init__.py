@@ -7,7 +7,6 @@ from . import (
     json_utils,
     sqlite_utils,
     xls_utils,
-    mysql_utils,
 )
 
 from . csv_utils import (
@@ -42,12 +41,6 @@ from . xls_utils import (
     dictofdf2xls,
 )
 
-from . mysql_utils import (
-    df2mysql,
-    MySQLProxy,
-    get_tables_on_given_database,
-)
-
 __all__ = [
     "open_csv_as_df",
 
@@ -69,7 +62,4 @@ __all__ = [
     "dataframe2xls",
     "dictofdf2xls",
 
-    "df2mysql",
-    "MySQLProxy",
-    "get_tables_on_given_database",
 ]
