@@ -27,6 +27,10 @@ from . preprocessing import (
     winsorize,
 )
 
+from . visualize import (
+    visualizing_data,
+)
+
 __all__ = [
     "df_sampling",
 
@@ -40,4 +44,6 @@ __all__ = [
     "date2week",
 
     "winsorize",
+
+    "visualizing_data",
 ]
