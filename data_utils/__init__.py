@@ -25,6 +25,7 @@ from . datetime_utils import (
 
 from . preprocessing import (
     winsorize,
+    cap,
 )
 
 from . visualize import (
@@ -44,6 +45,7 @@ __all__ = [
     "date2week",
 
     "winsorize",
+    "cap",
 
     "visualizing_data",
 ]

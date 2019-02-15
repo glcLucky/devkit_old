@@ -43,3 +43,17 @@ def winsorize(data, var, lower_quanile, upper_quantile):
         "normal_sector": normal_sector,
         "upper_sector": upper_sector
     }
+
+
+def cap(x, quantile=[0.001, 0.999]):
+    """
+    cap a feature according to given quantile
+    if you want cap all columns u can use df.apply(cap, quantile=[0.001, 0.999])
+    @x <pd.Series>:
+    @quantile <list>: 
+    """
+    q1, q2 = x.quantile(quantile).values.tolist()
+    x_ = x.copy()
+    x_[x < q1] = q1
+    x_[x > q2] = q2
+    return x_
