@@ -21,6 +21,7 @@ from . datetime_utils import (
     date2char,
     get_available_report_day,
     date2week,
+    cal_days,
 )
 
 from . preprocessing import (

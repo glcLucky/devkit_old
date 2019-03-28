@@ -20,11 +20,11 @@ from dateutil.relativedelta import relativedelta
 
 def char2datetime(date_in, format="%Y-%m-%d"):
     """
-    将"YYYY-mm-dd"形式的日期字符串转换为datetime.date
+    将"YYYY-mm-dd"形式的日期字符串转换为datetime
     """
     if len(date_in) == 0:
         return None
-    num = datetime.datetime.strptime(date_in, format).date()
+    num = datetime.datetime.strptime(date_in, format)
     return num
 
 
@@ -88,3 +88,16 @@ def date2week(date, format="%Y-%m-%d"):
     }
     day = date.weekday()
     return week_day_dict[day]
+
+
+def cal_days(st, end, output_type="int", format="%Y-%m-%d"):
+    """
+    计算指定日期间的天数(包含st和end两个值)
+    @output_type <str>: 输出类型 "int" or "timedelta"
+    """
+    st = datetime.datetime.strptime(st, format)
+    end = datetime.datetime.strptime(end, format)
+    if output_type == "int":
+        return (st - end).days + 1
+    else:
+        return (st - end) + datetime.timedelta(days=1)
